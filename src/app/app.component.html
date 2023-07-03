@@ -17,15 +17,11 @@
       <button (click)="searchMovies()">Search</button>
     </div>
 
-    <div class="movie-container" *ngIf="!isLoading">
+    <div class="movie-container">
       <div class="movie-card" *ngFor="let movie of movies">
         <app-movie-card [movie]="movie"></app-movie-card>
       </div>
     </div>
-    <div class="loader" [class.visible]="isLoading">
-      <p class="loader-text">Loading...</p>
-    </div>
-
     <ul class="pagination">
       <li class="page-item" [class.disabled]="currentPage === 1">
         <button class="page-link" (click)="previousPage()">Previous</button>
